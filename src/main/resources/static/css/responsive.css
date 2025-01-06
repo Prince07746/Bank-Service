@@ -66,6 +66,7 @@
 @media (max-width: 576px) {
     .slider_section .detail-box h1 {
         font-size: 3.5rem;
+        color: green;
     }
 
     .slider_section .detail-box h2 {
@@ -115,6 +116,7 @@
 @media (max-width: 420px) {
     .slider_section .detail-box h1 {
         font-size: 2.5rem;
+        color: green;
     }
 
     .slider_section .detail-box h2 {

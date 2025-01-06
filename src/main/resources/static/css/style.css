@@ -223,6 +223,7 @@ a:focus {
 .slider_section .detail-box h1 {
   font-size: 4rem;
   font-weight: bold;
+  color: green;
 }
 
 .slider_section .detail-box h2 {
