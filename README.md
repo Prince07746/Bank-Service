@@ -8,6 +8,12 @@
 ### Bank Service Application Documentation
 
 ---
+![image](https://github.com/user-attachments/assets/47c1e8a1-217a-4e1a-a419-1c53e9bee818)
+
+![image](https://github.com/user-attachments/assets/5ea2e13e-66a7-4f03-b44e-1daea68bf83d)
+
+![image](https://github.com/user-attachments/assets/b6cb9860-4db1-45e9-aaa0-750ccd0a4178)
+
 
 #### **Project Overview**
 The Bank Service Application is a robust and scalable banking platform designed to facilitate user management, card services, and transaction processing. Built with a focus on modularity and simplicity, this project employs modern technologies to address real-world banking needs.
