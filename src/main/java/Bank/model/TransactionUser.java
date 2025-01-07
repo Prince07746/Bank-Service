@@ -1,10 +1,22 @@
-package MyApp.model;
+ package Bank.model;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.UUID;
 
+@Entity
 public class TransactionUser {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
+    private int userId;
     private String fullName;
     private double amount;
     private double balance;
@@ -13,10 +25,11 @@ public class TransactionUser {
     private boolean transactionStatus;
     private LocalDate date;
 
-    public TransactionUser(int id, String fullName, double amount,
+    public TransactionUser(int id,int userId, String fullName, double amount,
                            double balance, String destinationName, int destinationId,
                            boolean transactionStatus, LocalDate date) {
         this.id = id;
+        this.userId = userId;
         this.fullName = fullName;
         this.amount = amount;
         this.balance = balance;
@@ -35,6 +48,14 @@ public class TransactionUser {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getFullName() {
@@ -98,18 +119,19 @@ public class TransactionUser {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TransactionUser that = (TransactionUser) o;
-        return id == that.id && Double.compare(amount, that.amount) == 0 && destinationId == that.destinationId;
+        return id == that.id && userId == that.userId && destinationId == that.destinationId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, amount, destinationId);
+        return Objects.hash(id, userId, destinationId);
     }
 
     @Override
     public String toString() {
         return "TransactionUser{" +
                 "id=" + id +
+                ", userId=" + userId +
                 ", fullName='" + fullName + '\'' +
                 ", amount=" + amount +
                 ", balance=" + balance +

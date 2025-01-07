@@ -1,42 +1,51 @@
-package MyApp.model;
+package Bank.model;
 
-import jakarta.persistence.*;
 
-import java.util.Objects;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class UserClient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
     private String lastName;
-    private int age;
+    private String address;
+    private String phone;
+    private double balance;
+    private int password;
 
-
-    public UserClient(int id, String name, String lastName, int age) {
+    public UserClient(Long id, String name, String lastName, String address, String phone, double balance, int password) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
-        this.age = age;
+        this.address = address;
+        this.phone = phone;
+        this.balance = balance;
+        this.password = password;
     }
 
-    public UserClient(String name, String lastName, int age) {
+    public UserClient(String name, String lastName, String address, String phone, double balance, int password) {
         this.name = name;
         this.lastName = lastName;
-        this.age = age;
+        this.address = address;
+        this.phone = phone;
+        this.balance = balance;
+        this.password = password;
     }
 
     public UserClient() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,34 +65,35 @@ public class UserClient {
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return age;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UserClient userClient = (UserClient) o;
-        return id == userClient.id && age == userClient.age && Objects.equals(name, userClient.name) && Objects.equals(lastName, userClient.lastName);
+    public String getPhone() {
+        return phone;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, lastName, age);
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    @Override
-    public String toString() {
-        return "UserClient{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public int getPassword() {
+        return password;
+    }
+
+    public void setPassword(int password) {
+        this.password = password;
     }
 }
