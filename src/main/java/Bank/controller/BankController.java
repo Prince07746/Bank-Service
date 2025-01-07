@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class BankController {
@@ -38,13 +39,19 @@ public class BankController {
         return "how";
     }
 
-    @PostMapping("/bank/newUser")
+    @GetMapping("/bank/user")
+    @ResponseBody
+    public List<UserClient> getUser(){
+        return bankService.getAllUsers();
+    }
+
+    @PostMapping("/bank/user")
     public ResponseEntity<UserClient> addUser(@RequestBody UserClient userClient){
         bankService.saveUser(userClient);
         return ResponseEntity.ok().body(userClient);
     }
 
-    @GetMapping("/user/bank/{id}")
+    @GetMapping("/bank/user/{id}")
     @ResponseBody
     public UserClientBank getUserBank(@PathVariable("id") int userId){
 
