@@ -1,3 +1,10 @@
+* use case
+  1. clone repo
+  2. run BankApp in bank package src
+  3. go on localhost port 8081
+  4. done
+  5. for configuration --> application.properties resources package
+
 ### Bank Service Application Documentation
 
 ---
